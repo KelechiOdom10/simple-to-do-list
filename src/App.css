@@ -1,11 +1,16 @@
 .App {
   text-align: center;
+  margin: 0 auto;
+}
+
+h1{
+  padding-top: 20px;
 }
 
 .App-logo {
-  height: 30vmin;
+  height: 25vmin;
   pointer-events: none;
-  margin-top: 2.5em;
+  margin-top: 1em;
   
 }
 
@@ -26,4 +31,39 @@
   to {
     transform: rotate(45deg);
   }
+}
+
+.search {
+  padding: 2em;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.todolist{
+  max-width: 310px;
+  margin: auto;
+  margin-top: 5px;
+  padding: .5em 0;
+  border: 1px solid grey;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.delete{
+  position: relative;
+  right: 0px;
+}
+
+.delete:hover {
+  cursor: pointer;
+}
+
+.checkmark{
+  position: relative;
+  left: 0px;
 }
