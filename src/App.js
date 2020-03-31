@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Search from './components/Search.js'
-import {Input, Button, Icon,} from 'semantic-ui-react'
 import Todolist from './components/Todolist';
 
 function App() {
@@ -18,11 +17,11 @@ function App() {
   }
 
   const removeTodo = (id) => {
-    const newTodos = todos.filter(todo => todo.id != id);
+    const newTodos = todos.filter(todo => todo.id !== id);
     setTodos(newTodos)
   }
 
-  const todoList = todos.map((todo, idx) =>{
+  const todoList = todos.map((todo) =>{
    return <Todolist  key ={todo.id} todo = {todo.text} onClick = {() => removeTodo(todo.id)} />   
 })
 
