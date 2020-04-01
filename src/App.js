@@ -12,7 +12,7 @@ function App() {
   }
 
   const addTodos = () => {
-    setTodos(prevList => [...prevList, {id: Date.now(), text:inputval}]);
+    setTodos(prevList => [...prevList, {id: Date.now(), text:inputval, isCompleted:false}]);
     setInputVal('')
   }
 
@@ -22,10 +22,20 @@ function App() {
   }
 
   const todoList = todos.map((todo) =>{
-   return <Todolist  key ={todo.id} todo = {todo.text} onClick = {() => removeTodo(todo.id)} />   
+   return <Todolist  key ={todo.id} todo = {todo.text} onDoubleClick = {() => removeTodo(todo.id)} onClick = {() => toggleCompleted(todo.id)} />   
 })
 
-  //<p onDoubleClick = {removeTodo}>X</p>
+  const toggleCompleted = (id) => {
+    setTodos(todos.map(todo => {
+      if (todo.id === id) {
+        return{
+          ...todo, isCompleted: !todo.isCompleted
+        }
+      }
+      return todo
+    }) 
+    )
+  }
 
   return (
     <div className="App">
