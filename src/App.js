@@ -22,7 +22,7 @@ function App() {
   }
 
   const todoList = todos.map((todo) =>{
-   return <Todolist  key ={todo.id} todo = {todo.text} onDoubleClick = {() => removeTodo(todo.id)} onClick = {() => toggleCompleted(todo.id)} />   
+   return <Todolist  key ={todo.id} todo = {todo} onDoubleClick = {() => removeTodo(todo.id)} onClick = {() => toggleCompleted(todo.id)} />   
 })
 
   const toggleCompleted = (id) => {

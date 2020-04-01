@@ -8,9 +8,11 @@ function Todolist(props) {
             <label 
                 for="todos"
                 style = {{textDecoration: props.todo.isCompleted ? 'line-through': null}}
+
+                // {fontStyle: props.todo.isCompleted ? 'line-through': null} 
             
-            >{props.todo} </label>
-            <Icon className = 'delete' onDoubleClick = {props.onDoubleClick}/>
+            >{props.todo.text} </label>
+            <Icon className = 'delete' onClick = {props.onDoubleClick}/>
         </div>
     )
 }
