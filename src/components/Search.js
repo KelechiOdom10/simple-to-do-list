@@ -7,8 +7,15 @@ function Search(props) {
         <h1>TODO LIST APP</h1>
         <img src={props.src} className="App-logo" alt="logo" />
         <div className = 'search'>     
-            <Input placeholder='Add todo...' onChange = {props.onChange} value = {props.value} />
-            <Button content='Add Todo' onClick = {props.onClick}/>
+            <Input 
+                placeholder='Add todo...' 
+                onChange = {props.onChange} 
+                value = {props.value} 
+            />
+            <Button 
+                content='Add Todo' 
+                onClick = {props.onClick}
+            />
         </div>
     </div>
     )

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Search from './components/Search.js'
-import Todolist from './components/Todolist';
+import TodoListItem from './components/TodoListItem';
 
 function App() {
   const [todos, setTodos] = React.useState([]);
@@ -22,8 +22,15 @@ function App() {
   }
 
   const todoList = todos.map((todo) =>{
-   return <Todolist  key ={todo.id} todo = {todo} onDoubleClick = {() => removeTodo(todo.id)} onClick = {() => toggleCompleted(todo.id)} />   
-})
+   return (
+    <TodoListItem
+      key ={todo.id}
+      todo = {todo} 
+      onDoubleClick = {() => removeTodo(todo.id)} 
+      onClick = {() => toggleCompleted(todo.id)}
+    />
+   )   
+  })
 
   const toggleCompleted = (id) => {
     setTodos(todos.map(todo => {
@@ -39,7 +46,12 @@ function App() {
 
   return (
     <div className="App">
-      <Search src='./assets/todo.png' onChange = {handleEvent} onClick = {addTodos} value = {inputval} />
+      <Search
+        src='./assets/todo.png'
+        onChange={handleEvent}
+        onClick={addTodos}
+        value={inputval}
+      />
       {todos.length <= 0 ? <p>You currently have no todos!</p> : null}
       {todoList}
     </div>
